@@ -11,7 +11,7 @@ var request = require('request');
 var zlib = require('zlib');
 var HttpsProxyAgent = require('https-proxy-agent');
 
-request.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=http&timeout=9000&country=all&anonymity=all&ssl=all", (err, res, set) => {
+request.get('https://raw.githubusercontent.com/Renzyx/parkandpork/main/2', (err, res, set) => {
   var proxies = set.match(/(\d{1,3}\.){3}\d{1,3}\:\d{1,5}/g);
 
   process.on('uncaughtException', (err) => {});
